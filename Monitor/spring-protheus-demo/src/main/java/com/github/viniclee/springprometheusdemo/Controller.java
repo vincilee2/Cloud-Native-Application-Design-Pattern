@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
  @RestController
-public class controller {
+public class Controller {
     
     @Autowired
     ServiceBApiMock serviceBApiMock;

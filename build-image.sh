@@ -1,0 +1,1 @@
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=vincilee2/spring-prometheus-demo:v1

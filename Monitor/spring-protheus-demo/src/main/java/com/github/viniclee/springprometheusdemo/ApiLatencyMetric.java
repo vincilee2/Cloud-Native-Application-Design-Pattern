@@ -9,7 +9,7 @@ import io.micrometer.core.instrument.Timer;
 
 @Component
 public class ApiLatencyMetric {
-        // monitor api latency of product B
+        // monitor api latency of service B
         private final Timer latencyTimer;
 
         private static final String apiRequestLatency = "api.request.latency";
@@ -24,7 +24,7 @@ public class ApiLatencyMetric {
                 .serviceLevelObjectives(Duration.ofMillis(1))
                 .minimumExpectedValue(Duration.ofMillis(1))
                 .maximumExpectedValue(Duration.ofMillis(300))
-                .tag("product", "B")
+                .tag("service", "B")
                 .register(registry);
         }
 
