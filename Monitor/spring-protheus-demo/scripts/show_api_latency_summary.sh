@@ -1,0 +1,1 @@
+curl -s localhost:9090/actuator/prometheus|grep api_request_latency|grep quantile
