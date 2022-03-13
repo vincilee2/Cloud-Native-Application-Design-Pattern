@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-prometheus-demo
+spec:
+  replicas: 1
+  selector:
+  template:
+    metadata:
+      annotations:
+        - prometheus.io/scrape: "true"
+        - prometheus.io/scheme: "http"
+        - prometheus.io/path: "/actuator/prometheus"
+        - prometheus.io/port: "9090"
+    spec:
+      imagePullSecrets:
+          - name: "your_aks-sec"
+      containers:
+        - name: spring-prometheus-demo
+          image: "vincilee2/spring-prometheus-demo:v1"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: prometheus
+              containerPort: 9090
+              protocol: TCP
