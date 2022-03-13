@@ -24,4 +24,14 @@ sh docker-build.sh
 
 # Deploy to kubernetes
 
-The 
+deploy the container
+
+```
+kubectl apply -f deploy/deployment.yaml
+```
+
+deploy the configmap of prometheus, see [Configure scraping of Prometheus metrics with Container insights](https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-prometheus-integration)
+
+```
+kubectl apply -f deploy/prometheus_configmap.yaml
+```
