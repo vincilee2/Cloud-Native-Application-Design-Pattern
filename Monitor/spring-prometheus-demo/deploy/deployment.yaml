@@ -18,7 +18,7 @@ spec:
       containers:
         - name: spring-prometheus-demo
           image: "vincilee2/spring-prometheus-demo:v1"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: IfNotPresent
           ports:
             - name: prometheus
               containerPort: 9090
